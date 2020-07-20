@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="stayle/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="img/Rinnen_NBrn.ico">
+
+    <title>Battle Kawaii</title>
+</head>
+
+<body id="body">
+    <h6>Batalla Kawaii</h6>
+    <nav class="navbar navbar-expand-lg navbar-light colorNav">
+        <a class="navbar-brand" id="colorHome" href="games.html">Homepage</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" id="colorScore" href="Score.html">Score</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="app">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <button type="button" class="btn btn-light" v-on:click="fondoOjos()">Gif 1</button>
+                <button type="button" class="btn btn-danger" v-on:click="fondoImagenDeFondo()">Image</button>
+                <button type="button" class="btn btn-light" v-on:click="fondoEcenas()">Gif 2</button>
+            </div>
+            <div class="col-12 col-md">
+                <audio src="musica/BEASTARS.mp3" autoplay controls></audio>
+            </div>
+        </div>
+        <div class="win" v-if="gameView.gameState == 'PLAYER_WINS'">YOU WIN !!!!</div>
+        <div class="lose" v-if="gameView.gameState == 'PLAYER_LOSE'">YOU LOSE !!!!</div>
+        <div class="tie" v-if="gameView.gameState == 'PLAYES_TIE'">¡¡¡TIE!!!</div>
+        <div class="row mt-5 justify-content-center">
+            <div class="col-12 col-md-4">
+                <table class="tablero">
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr class="A">
+                        <td>A</td>
+                        <td v-on:click="selectShips('A1')" data-col="1" id="A1"></td>
+                        <td v-on:click="selectShips('A2')" data-col="2" id="A2"></td>
+                        <td v-on:click="selectShips('A3')" data-col="3" id="A3"></td>
+                        <td v-on:click="selectShips('A4')" data-col="4" id="A4"></td>
+                        <td v-on:click="selectShips('A5')" data-col="5" id="A5"></td>
+                        <td v-on:click="selectShips('A6')" data-col="6" id="A6"></td>
+                        <td v-on:click="selectShips('A7')" data-col="7" id="A7"></td>
+                        <td v-on:click="selectShips('A8')" data-col="8" id="A8"></td>
+                        <td v-on:click="selectShips('A9')" data-col="9" id="A9"></td>
+                        <td v-on:click="selectShips('A10')" data-col="10" id="A10"></td>
+                    </tr>
+
+                    <tr class="B">
+                        <td>B</td>
+                        <td v-on:click="selectShips('B1')" id="B1"></td>
+                        <td v-on:click="selectShips('B2')" id="B2"></td>
+                        <td v-on:click="selectShips('B3')" id="B3"></td>
+                        <td v-on:click="selectShips('B4')" id="B4"></td>
+                        <td v-on:click="selectShips('B5')" id="B5"></td>
+                        <td v-on:click="selectShips('B6')" id="B6"></td>
+                        <td v-on:click="selectShips('B7')" id="B7"></td>
+                        <td v-on:click="selectShips('B8')" id="B8"></td>
+                        <td v-on:click="selectShips('B9')" id="B9"></td>
+                        <td v-on:click="selectShips('B10')" id="B10"></td>
+                    </tr>
+                    <tr class="C">
+                        <td>C</td>
+                        <td v-on:click="selectShips('C1')" id="C1"></td>
+                        <td v-on:click="selectShips('C2')" id="C2"></td>
+                        <td v-on:click="selectShips('C3')" id="C3"></td>
+                        <td v-on:click="selectShips('C4')" id="C4"></td>
+                        <td v-on:click="selectShips('C5')" id="C5"></td>
+                        <td v-on:click="selectShips('C6')" id="C6"></td>
+                        <td v-on:click="selectShips('C7')" id="C7"></td>
+                        <td v-on:click="selectShips('C8')" id="C8"></td>
+                        <td v-on:click="selectShips('C9')" id="C9"></td>
+                        <td v-on:click="selectShips('C10')" id="C10"></td>
+                    </tr>
+                    <tr class="D">
+                        <td>D</td>
+                        <td v-on:click="selectShips('D1')" id="D1"></td>
+                        <td v-on:click="selectShips('D2')" id="D2"></td>
+                        <td v-on:click="selectShips('D3')" id="D3"></td>
+                        <td v-on:click="selectShips('D4')" id="D4"></td>
+                        <td v-on:click="selectShips('D5')" id="D5"></td>
+                        <td v-on:click="selectShips('D6')" id="D6"></td>
+                        <td v-on:click="selectShips('D7')" id="D7"></td>
+                        <td v-on:click="selectShips('D8')" id="D8"></td>
+                        <td v-on:click="selectShips('D9')" id="D9"></td>
+                        <td v-on:click="selectShips('D10')" id="D10"></td>
+                    </tr>
+                    <tr class="E">
+                        <td>E</td>
+                        <td v-on:click="selectShips('E1')" id="E1"></td>
+                        <td v-on:click="selectShips('E2')" id="E2"></td>
+                        <td v-on:click="selectShips('E3')" id="E3"></td>
+                        <td v-on:click="selectShips('E4')" id="E4"></td>
+                        <td v-on:click="selectShips('E5')" id="E5"></td>
+                        <td v-on:click="selectShips('E6')" id="E6"></td>
+                        <td v-on:click="selectShips('E7')" id="E7"></td>
+                        <td v-on:click="selectShips('E8')" id="E8"></td>
+                        <td v-on:click="selectShips('E9')" id="E9"></td>
+                        <td v-on:click="selectShips('E10')" id="E10"></td>
+                    </tr>
+                    <tr class="F">
+                        <td>F</td>
+                        <td v-on:click="selectShips('F1')" id="F1"></td>
+                        <td v-on:click="selectShips('F2')" id="F2"></td>
+                        <td v-on:click="selectShips('F3')" id="F3"></td>
+                        <td v-on:click="selectShips('F4')" id="F4"></td>
+                        <td v-on:click="selectShips('F5')" id="F5"></td>
+                        <td v-on:click="selectShips('F6')" id="F6"></td>
+                        <td v-on:click="selectShips('F7')" id="F7"></td>
+                        <td v-on:click="selectShips('F8')" id="F8"></td>
+                        <td v-on:click="selectShips('F9')" id="F9"></td>
+                        <td v-on:click="selectShips('F10')" id="F10"></td>
+                    </tr>
+                    <tr class="G">
+                        <td>G</td>
+                        <td v-on:click="selectShips('G1')" id="G1"></td>
+                        <td v-on:click="selectShips('G2')" id="G2"></td>
+                        <td v-on:click="selectShips('G3')" id="G3"></td>
+                        <td v-on:click="selectShips('G4')" id="G4"></td>
+                        <td v-on:click="selectShips('G5')" id="G5"></td>
+                        <td v-on:click="selectShips('G6')" id="G6"></td>
+                        <td v-on:click="selectShips('G7')" id="G7"></td>
+                        <td v-on:click="selectShips('G8')" id="G8"></td>
+                        <td v-on:click="selectShips('G9')" id="G9"></td>
+                        <td v-on:click="selectShips('G10')" id="G10"></td>
+                    </tr>
+                    <tr class="H">
+                        <td>H</td>
+                        <td v-on:click="selectShips('H1')" id="H1"></td>
+                        <td v-on:click="selectShips('H2')" id="H2"></td>
+                        <td v-on:click="selectShips('H3')" id="H3"></td>
+                        <td v-on:click="selectShips('H4')" id="H4"></td>
+                        <td v-on:click="selectShips('H5')" id="H5"></td>
+                        <td v-on:click="selectShips('H6')" id="H6"></td>
+                        <td v-on:click="selectShips('H7')" id="H7"></td>
+                        <td v-on:click="selectShips('H8')" id="H8"></td>
+                        <td v-on:click="selectShips('H9')" id="H9"></td>
+                        <td v-on:click="selectShips('H10')" id="H10"></td>
+                    </tr>
+                    <tr class="I">
+                        <td>I</td>
+                        <td v-on:click="selectShips('I1')" id="I1"></td>
+                        <td v-on:click="selectShips('I2')" id="I2"></td>
+                        <td v-on:click="selectShips('I3')" id="I3"></td>
+                        <td v-on:click="selectShips('I4')" id="I4"></td>
+                        <td v-on:click="selectShips('I5')" id="I5"></td>
+                        <td v-on:click="selectShips('I6')" id="I6"></td>
+                        <td v-on:click="selectShips('I7')" id="I7"></td>
+                        <td v-on:click="selectShips('I8')" id="I8"></td>
+                        <td v-on:click="selectShips('I9')" id="I9"></td>
+                        <td v-on:click="selectShips('I10')" id="I10"></td>
+                    </tr>
+                    <tr class="J">
+                        <td>J</td>
+                        <td v-on:click="selectShips('J1')" id="J1"></td>
+                        <td v-on:click="selectShips('J2')" id="J2"></td>
+                        <td v-on:click="selectShips('J3')" id="J3"></td>
+                        <td v-on:click="selectShips('J4')" id="J4"></td>
+                        <td v-on:click="selectShips('J5')" id="J5"></td>
+                        <td v-on:click="selectShips('J6')" id="J6"></td>
+                        <td v-on:click="selectShips('J7')" id="J7"></td>
+                        <td v-on:click="selectShips('J8')" id="J8"></td>
+                        <td v-on:click="selectShips('J9')" id="J9"></td>
+                        <td v-on:click="selectShips('J10')" id="J10"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-12 col-md-4">
+                <table class="tableroSalvos">
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr class="A">
+                        <td>A</td>
+                        <td v-on:click="selectSalvos('A1')" data-col="1" id="A1s"></td>
+                        <td v-on:click="selectSalvos('A2')" data-col="2" id="A2s"></td>
+                        <td v-on:click="selectSalvos('A3')" data-col="3" id="A3s"></td>
+                        <td v-on:click="selectSalvos('A4')" data-col="4" id="A4s"></td>
+                        <td v-on:click="selectSalvos('A5')" data-col="5" id="A5s"></td>
+                        <td v-on:click="selectSalvos('A6')" data-col="6" id="A6s"></td>
+                        <td v-on:click="selectSalvos('A7')" data-col="7" id="A7s"></td>
+                        <td v-on:click="selectSalvos('A8')" data-col="8" id="A8s"></td>
+                        <td v-on:click="selectSalvos('A9')" data-col="9" id="A9s"></td>
+                        <td v-on:click="selectSalvos('A10')" data-col="10" id="A10s"></td>
+                    </tr>
+                    <tr class="B">
+                        <td>B</td>
+                        <td v-on:click="selectSalvos('B1')" id="B1s"></td>
+                        <td v-on:click="selectSalvos('B2')" id="B2s"></td>
+                        <td v-on:click="selectSalvos('B3')" id="B3s"></td>
+                        <td v-on:click="selectSalvos('B4')" id="B4s"></td>
+                        <td v-on:click="selectSalvos('B5')" id="B5s"></td>
+                        <td v-on:click="selectSalvos('B6')" id="B6s"></td>
+                        <td v-on:click="selectSalvos('B7')" id="B7s"></td>
+                        <td v-on:click="selectSalvos('B8')" id="B8s"></td>
+                        <td v-on:click="selectSalvos('B9')" id="B9s"></td>
+                        <td v-on:click="selectSalvos('B10')" id="B10s"></td>
+                    </tr>
+                    <tr class="C">
+                        <td>C</td>
+                        <td v-on:click="selectSalvos('C1')" id="C1s"></td>
+                        <td v-on:click="selectSalvos('C2')" id="C2s"></td>
+                        <td v-on:click="selectSalvos('C3')" id="C3s"></td>
+                        <td v-on:click="selectSalvos('C4')" id="C4s"></td>
+                        <td v-on:click="selectSalvos('C5')" id="C5s"></td>
+                        <td v-on:click="selectSalvos('C6')" id="C6s"></td>
+                        <td v-on:click="selectSalvos('C7')" id="C7s"></td>
+                        <td v-on:click="selectSalvos('C8')" id="C8s"></td>
+                        <td v-on:click="selectSalvos('C9')" id="C9s"></td>
+                        <td v-on:click="selectSalvos('C10')" id="C10s"></td>
+                    </tr>
+                    <tr class="D">
+                        <td>D</td>
+                        <td v-on:click="selectSalvos('D1')" id="D1s"></td>
+                        <td v-on:click="selectSalvos('D2')" id="D2s"></td>
+                        <td v-on:click="selectSalvos('D3')" id="D3s"></td>
+                        <td v-on:click="selectSalvos('D4')" id="D4s"></td>
+                        <td v-on:click="selectSalvos('D5')" id="D5s"></td>
+                        <td v-on:click="selectSalvos('D6')" id="D6s"></td>
+                        <td v-on:click="selectSalvos('D7')" id="D7s"></td>
+                        <td v-on:click="selectSalvos('D8')" id="D8s"></td>
+                        <td v-on:click="selectSalvos('D9')" id="D9s"></td>
+                        <td v-on:click="selectSalvos('D10')" id="D10s"></td>
+                    </tr>
+                    <tr class="E">
+                        <td>E</td>
+                        <td v-on:click="selectSalvos('E1')" id="E1s"></td>
+                        <td v-on:click="selectSalvos('E2')" id="E2s"></td>
+                        <td v-on:click="selectSalvos('E3')" id="E3s"></td>
+                        <td v-on:click="selectSalvos('E4')" id="E4s"></td>
+                        <td v-on:click="selectSalvos('E5')" id="E5s"></td>
+                        <td v-on:click="selectSalvos('E6')" id="E6s"></td>
+                        <td v-on:click="selectSalvos('E7')" id="E7s"></td>
+                        <td v-on:click="selectSalvos('E8')" id="E8s"></td>
+                        <td v-on:click="selectSalvos('E9')" id="E9s"></td>
+                        <td v-on:click="selectSalvos('E10')" id="E10s"></td>
+                    </tr>
+                    <tr class="F">
+                        <td>F</td>
+                        <td v-on:click="selectSalvos('F1')" id="F1s"></td>
+                        <td v-on:click="selectSalvos('F2')" id="F2s"></td>
+                        <td v-on:click="selectSalvos('F3')" id="F3s"></td>
+                        <td v-on:click="selectSalvos('F4')" id="F4s"></td>
+                        <td v-on:click="selectSalvos('F5')" id="F5s"></td>
+                        <td v-on:click="selectSalvos('F6')" id="F6s"></td>
+                        <td v-on:click="selectSalvos('F7')" id="F7s"></td>
+                        <td v-on:click="selectSalvos('F8')" id="F8s"></td>
+                        <td v-on:click="selectSalvos('F9')" id="F9s"></td>
+                        <td v-on:click="selectSalvos('F10')" id="F10s"></td>
+                    </tr>
+                    <tr class="G">
+                        <td>G</td>
+                        <td v-on:click="selectSalvos('G1')" id="G1s"></td>
+                        <td v-on:click="selectSalvos('G2')" id="G2s"></td>
+                        <td v-on:click="selectSalvos('G3')" id="G3s"></td>
+                        <td v-on:click="selectSalvos('G4')" id="G4s"></td>
+                        <td v-on:click="selectSalvos('G5')" id="G5s"></td>
+                        <td v-on:click="selectSalvos('G6')" id="G6s"></td>
+                        <td v-on:click="selectSalvos('G7')" id="G7s"></td>
+                        <td v-on:click="selectSalvos('G8')" id="G8s"></td>
+                        <td v-on:click="selectSalvos('G9')" id="G9s"></td>
+                        <td v-on:click="selectSalvos('G10')" id="G10s"></td>
+                    </tr>
+                    <tr class="H">
+                        <td>H</td>
+                        <td v-on:click="selectSalvos('H1')" id="H1s"></td>
+                        <td v-on:click="selectSalvos('H2')" id="H2s"></td>
+                        <td v-on:click="selectSalvos('H3')" id="H3s"></td>
+                        <td v-on:click="selectSalvos('H4')" id="H4s"></td>
+                        <td v-on:click="selectSalvos('H5')" id="H5s"></td>
+                        <td v-on:click="selectSalvos('H6')" id="H6s"></td>
+                        <td v-on:click="selectSalvos('H7')" id="H7s"></td>
+                        <td v-on:click="selectSalvos('H8')" id="H8s"></td>
+                        <td v-on:click="selectSalvos('H9')" id="H9s"></td>
+                        <td v-on:click="selectSalvos('H10')" id="H10s"></td>
+                    </tr>
+                    <tr class="I">
+                        <td>I</td>
+                        <td v-on:click="selectSalvos('I1')" id="I1s"></td>
+                        <td v-on:click="selectSalvos('I2')" id="I2s"></td>
+                        <td v-on:click="selectSalvos('I3')" id="I3s"></td>
+                        <td v-on:click="selectSalvos('I4')" id="I4s"></td>
+                        <td v-on:click="selectSalvos('I5')" id="I5s"></td>
+                        <td v-on:click="selectSalvos('I6')" id="I6s"></td>
+                        <td v-on:click="selectSalvos('I7')" id="I7s"></td>
+                        <td v-on:click="selectSalvos('I8')" id="I8s"></td>
+                        <td v-on:click="selectSalvos('I9')" id="I9s"></td>
+                        <td v-on:click="selectSalvos('I10')" id="I10s"></td>
+                    </tr>
+                    <tr class="J">
+                        <td>J</td>
+                        <td v-on:click="selectSalvos('J1')" id="J1s"></td>
+                        <td v-on:click="selectSalvos('J2')" id="J2s"></td>
+                        <td v-on:click="selectSalvos('J3')" id="J3s"></td>
+                        <td v-on:click="selectSalvos('J4')" id="J4s"></td>
+                        <td v-on:click="selectSalvos('J5')" id="J5s"></td>
+                        <td v-on:click="selectSalvos('J6')" id="J6s"></td>
+                        <td v-on:click="selectSalvos('J7')" id="J7s"></td>
+                        <td v-on:click="selectSalvos('J8')" id="J8s"></td>
+                        <td v-on:click="selectSalvos('J9')" id="J9s"></td>
+                        <td v-on:click="selectSalvos('J10')" id="J10s"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col send">
+                <div class="row ">
+                    <div class="col-12 col-md-3">
+                        <button
+                            v-if="gameView.gameState === 'WAITING_OPPONENT' || gameView.gameState === 'PLAYER_PLACES_SHIPS' "
+                            type="button" class="btn btn-danger" v-on:click="guardarBarquitos()">Send Ship</button>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="posicion">
+                            Standings
+                            <label><input v-model="orientacion" type="radio" name="orientation" value="vertical"
+                                    checked>Vertical</label>
+                            <label><input v-model="orientacion" type="radio" name="orientation"
+                                    value="horizontal">Horizontal</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-5 mt-3">
+                        <div class="estiloDeBarcos">
+                            <label>
+                                Ships
+                                <select v-model="barco" name="barcos">
+                                    <option value="ElPerlaNegra">ElPerlaNegra</option>
+                                    <option value="Nautilus">Nautilus</option>
+                                    <option value="Nimitz">Nimitz</option>
+                                    <option value="Clemenceau">Clemenceau</option>
+                                    <option value="Kirov">Kirov</option>
+                                    <option value="ThousandSunny">ThousandSunny</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <button v-if="gameView.gameState == 'PLAYER_PLACES_SALVOES'" type="button" class="corchaso"
+                    v-on:click="guardarSalvitos()">¡¡Fire!!</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="history">
+                        <thead>
+                            <tr>
+                                <th>Turn</th>
+                                <th>Hits</th>
+                                <th>Sinks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="h in history">
+                                <td>
+                                    {{h.turno}}
+                                </td>
+                                <td>
+                                    {{h.hits.length}}
+                                </td>
+                                <td>
+                                    {{h.sinks.join(",")}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div class="table-responsive">
+                    <table class="enemyHistory">
+                        <thead>
+                            <tr>
+                                <th>Enemy Turn</th>
+                                <th>Enemy hits</th>
+                                <th>Enemy sinks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="h in enemyHistory">
+                                <td>
+                                    {{h.turno}}
+                                </td>
+                                <td>
+                                    {{h.hits.length}}
+                                </td>
+                                <td>
+                                    {{h.sinks.join(",")}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src=scripts/game.js></script>
+</body>
+
+</html>

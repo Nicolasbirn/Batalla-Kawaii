@@ -1,0 +1,81 @@
+* {
+    font-family: cursive;
+}
+
+body {
+    background-image: url(../img/tatroJapones.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: red;
+    background: rgb(255, 238, 225);
+    background: radial-gradient(circle, rgba(255, 238, 225, 1) 0%, rgba(158, 150, 76, 0.9108018207282913) 40%, rgba(0, 1, 2, 1) 98%, rgba(0, 1, 2, 1) 100%);
+    text-align: center;
+    border-radius: 1px;
+}
+
+.formulario {
+    text-align: center;
+    color: red;
+    background: rgb(255, 238, 225);
+    background: radial-gradient(circle, rgba(255, 238, 225, 1) 0%, rgba(158, 150, 76, 0.9108018207282913) 40%, rgba(0, 1, 2, 1) 98%, rgba(0, 1, 2, 1) 100%);
+    border-radius: 5px;
+    position: absolute;
+    top: 150px;
+    left: 335px;
+    opacity: 0.9;
+}
+
+.colorNav {
+    background: rgb(255, 238, 225);
+    background: radial-gradient(circle, rgba(255, 238, 225, 1) 0%, rgba(158, 150, 76, 0.9108018207282913) 40%, rgba(0, 1, 2, 1) 98%, rgba(0, 1, 2, 1) 100%);
+    opacity: 0.9;
+}
+
+#colorHome {
+    color: red;
+}
+
+#colorGame {
+    color: red;
+}
+
+#colorScore {
+    color: red;
+}
+
+#logOut {
+    position: absolute;
+    right: 200px;
+    top: 95px;
+}
+
+#crearJuego {
+    color: rgb(219, 28, 187);
+    position: absolute;
+    right: 620px;
+    top: 100px;
+}
+
+body h6 {
+    text-align: center;
+    color: red;
+    background: rgb(255, 238, 225);
+    background: radial-gradient(circle, rgba(255, 238, 225, 1) 0%, rgba(158, 150, 76, 0.9108018207282913) 40%, rgba(0, 1, 2, 1) 98%, rgba(0, 1, 2, 1) 100%);
+    font-size: 25px;
+    opacity: 0.9;
+}
+
+.gameCreated {
+    background: rgb(255, 238, 225);
+    background: radial-gradient(circle, rgba(255, 238, 225, 1) 0%, rgba(158, 150, 76, 0.9108018207282913) 40%, rgba(0, 1, 2, 1) 98%, rgba(0, 1, 2, 1) 100%);
+    color: rgba(255, 0, 0, 0.938);
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    top: 200px;
+    right: 500px;
+    opacity: 0.9;
+}

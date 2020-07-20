@@ -1,0 +1,181 @@
+* {
+    font-family: cursive;
+}
+
+body {
+    background-image: url(../img/Mirai\ body.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoOjos {
+    background-image: url(../img/Mirai.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoEcena {
+    background-image: url(../img/Mirai\ 2.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bodyHomepageC {
+    background-image: url(../img/Sebastian\ Michaelis.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoHomepage {
+    background-image: url(../img/Lelouch.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoHomepage2 {
+    background-image: url(../img/Kurohitsuji.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bodyScoreC {
+    background-image: url(../img/Karna.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoScore {
+    background-image: url(../img/Frankestein.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoScore2 {
+    background-image: url(../img/ojos\ 9.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colorNav {
+    background-color: blueviolet;
+    position: absolute;
+    bottom: 5px;
+}
+
+#colorHome {
+    color: gold;
+}
+
+#colorGame {
+    color: gold;
+}
+
+#colorScore {
+    color: gold;
+}
+
+.tablero {
+    color: white;
+    border-collapse: collapse;
+    position: relative;
+    left: 195px;
+    bottom: -45px;
+}
+
+.tablero td {
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.tableroSalvos {
+    color: white;
+    border-collapse: collapse;
+    position: relative;
+    left: 600px;
+    bottom: 290px;
+}
+
+.tableroSalvos td {
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.salvos {
+    background-color: gold;
+    color: black;
+    width: 10px;
+    height: 10px;
+}
+
+body h6 {
+    text-align: center;
+    color: gold;
+    background-color: blueviolet;
+    font-size: 25px;
+}
+
+.h2 {
+    color: white;
+    text-align: center;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    position: absolute;
+    left: 460px;
+    bottom: -40px;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.table {
+    position: absolute;
+    left: 350px;
+    top: 50px;
+}
+
+.table th {
+    color: white;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    opacity: 0.8;
+
+}
+
+.table td {
+    color: white;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    opacity: 0.7;
+}
+
+#generar {
+    position: absolute;
+    left: 610px;
+    bottom: 350px;
+    color: black;
+}
+
+.Enterprise {
+    background-color: blue;
+}
+
+.Nautilus {
+    background-color: red;
+}
+
+.Nimitz {
+    background-color: blue;
+}
+
+.Clemenceau {
+    background-color: green;
+}
+
+.Kirov {
+    background-color: yellow;
+}
+
+.ThousandSunny {
+    background-color: pink;
+}

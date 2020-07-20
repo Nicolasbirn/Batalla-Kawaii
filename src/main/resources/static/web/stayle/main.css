@@ -1,0 +1,231 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(../img/anime\ 14.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoOjos {
+    background-image: url(../img/Mirai.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoEcena {
+    background-image: url(../img/Mirai\ 2.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bodyScoreC {
+    background-image: url(../img/Karna.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoScore {
+    background-image: url(../img/Frankestein.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fondoScore2 {
+    background-image: url(../img/karna.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.colorNav {
+    background-color: rgb(57, 11, 100);
+    position: absolute;
+    bottom: 5px;
+    opacity: 0.9;
+}
+
+#colorHome {
+    color: rgb(219, 37, 98);
+}
+
+#colorScore {
+    color: rgb(219, 37, 98);
+    position: relative;
+    left: 530px;
+}
+
+.tablero {
+    color: black;
+    border-collapse: collapse;
+}
+
+.tablero td {
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.tableroSalvos {
+    color: black;
+    border-collapse: collapse;
+}
+
+.tableroSalvos td {
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+}
+
+.tablero {
+    justify-content: center;
+    text-align: center;
+}
+
+.tableroSalvos {
+    justify-content: center;
+    text-align: center;
+}
+
+.salvos {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    width: 10px;
+    height: 10px;
+}
+
+.tirosErrados {
+    background: rgb(218, 221, 35);
+    width: 10px;
+    height: 10px;
+}
+
+body h6 {
+    text-align: center;
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    font-size: 25px;
+    opacity: 0.9;
+}
+
+.h2 {
+    color: white;
+    text-align: center;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    position: absolute;
+    left: 460px;
+    bottom: -107px;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.table {
+    position: absolute;
+    left: 350px;
+    top: 100px;
+}
+
+.table th {
+    color: white;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    opacity: 0.8;
+}
+
+.table td {
+    color: white;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    opacity: 0.7;
+}
+
+.history {
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    opacity: 0.9;
+    justify-content: center;
+    text-align: center;
+}
+
+.enemyHistory {
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    opacity: 0.9;
+    justify-content: center;
+    text-align: center;
+}
+
+#generar {
+    position: absolute;
+    left: 610px;
+    bottom: 350px;
+    color: black;
+}
+
+.posicion {
+    color: black;
+}
+
+.estiloDeBarcos {
+    color: black;
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    border-radius: 5px;
+}
+
+.corchaso {
+    background-image: url(../img/disparo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    border-radius: 5px;
+}
+
+.ElPerlaNegra {
+    background-color: rgba(156, 151, 151, 0.931);
+}
+
+.Nautilus {
+    background-color: blue;
+}
+
+.Nimitz {
+    background-color: green;
+}
+
+.Clemenceau {
+    background-color: yellow;
+}
+
+.Kirov {
+    background-color: orangered;
+}
+
+.ThousandSunny {
+    background-color: purple;
+}
+
+.win {
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.lose {
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.tie {
+    color: rgb(219, 37, 98);
+    background-color: rgb(57, 11, 100);
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0.9;
+}
